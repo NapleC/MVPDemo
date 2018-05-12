@@ -5,9 +5,8 @@ def libs = rootProject.ext.libraries
 
 android {
     compileSdkVersion cfg.compileVersion
-    buildToolsVersion cfg.buildToolsVersion
     defaultConfig {
-        applicationId "com.naple.devmvp"
+        applicationId "com.naple.hldemo"
         minSdkVersion cfg.minSdk
         targetSdkVersion cfg.targetSdk
         versionCode cfg.versionCode
@@ -33,21 +32,38 @@ android {
 
     lintOptions {
         abortOnError false
+        disable 'GradleDependency'
     }
+
+    buildToolsVersion '27.0.3'
 }
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
 
-    //noinspection GradleCompatible
     implementation "com.android.support:appcompat-v7:${libs.supportVersion}"
     implementation "com.android.support.constraint:constraint-layout:${libs.constraint_layout}"
     implementation "com.android.support:design:${libs.supportVersion}"
     implementation "com.android.support:support-v13:${libs.supportVersion}"
     implementation "com.android.support:support-vector-drawable:${libs.supportVersion}"
+    implementation "com.android.support:cardview-v7:${libs.supportVersion}"
+    implementation "com.android.support:recyclerview-v7:${libs.supportVersion}"
+
+    implementation 'com.android.support.constraint:constraint-layout:1.1.0'
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.1'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    releaseImplementation "com.squareup.leakcanary:leakcanary-android-no-op:${libs.leakCanary}"
+    debugImplementation "com.squareup.leakcanary:leakcanary-android:${libs.leakCanary}"
+    implementation 'me.yokeyword:fragmentation:1.2.5'
+    implementation "com.readystatesoftware.systembartint:systembartint:${libs.systembartint}"
+
+    /**
+     *  https://github.com/CymChad/BaseRecyclerViewAdapterHelper
+     */
+    implementation "com.github.CymChad:BaseRecyclerViewAdapterHelper:${libs.brvah}"
+
     /**
      *    RxJava
      */
@@ -60,11 +76,12 @@ dependencies {
     implementation "com.squareup.retrofit2:retrofit:${libs.retrofit}"
     implementation "com.squareup.retrofit2:adapter-rxjava:${libs.retrofit}"
     implementation "com.squareup.retrofit2:converter-gson:${libs.retrofit}"
+    implementation "com.squareup.retrofit2:converter-scalars:${libs.retrofit}"
     implementation "com.jakewharton.retrofit:retrofit2-rxjava2-adapter:${libs.rxjava2_adapter}"
     implementation "com.jakewharton.rxrelay2:rxrelay:${libs.rxjava2_rxrelay}"
 
     /**
-     *   okhttp
+     *   okhttp3
      */
     implementation "com.squareup.okhttp3:okhttp:${libs.okhttp3}"
     implementation "com.squareup.okhttp3:logging-interceptor:${libs.logging}"
@@ -74,4 +91,10 @@ dependencies {
      */
     implementation "com.jakewharton:butterknife:${libs.butterknife}"
     annotationProcessor "com.jakewharton:butterknife-compiler:${libs.butterknife}"
+
+    /**
+     * stetho 调试工具
+     */
+    implementation "com.facebook.stetho:stetho:${libs.stetho}"
+    implementation "com.facebook.stetho:stetho-okhttp3:${libs.stetho}"
 }
