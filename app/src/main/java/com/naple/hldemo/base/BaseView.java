@@ -3,20 +3,19 @@ package com.naple.hldemo.base;
 import android.support.annotation.StringRes;
 
 /**
- * Author: 海晨忆
- * Date: 2018/2/23
- * Desc:
+ *  created by hl at 2018/5/9
+ *  BaseView
  */
 public interface BaseView {
-  void showTipMsg(String msg);
+    void showTipMsg(String msg);
 
-  void showTipMsg(@StringRes int msg);
+    void showTipMsg(@StringRes int msg);
 
-  void showLoading();
+    void showLoading();
 
-  void hideLoading();
+    void hideLoading();
 
-  void invalidToken();
+    void invalidToken();
 
-  void myFinish();
+    void myFinish();
 }

@@ -35,7 +35,7 @@ android {
         disable 'GradleDependency'
     }
 
-    buildToolsVersion '27.0.3'
+    buildToolsVersion cfg.buildToolsVersion
 }
 
 dependencies {
@@ -58,6 +58,10 @@ dependencies {
     debugImplementation "com.squareup.leakcanary:leakcanary-android:${libs.leakCanary}"
     implementation 'me.yokeyword:fragmentation:1.2.5'
     implementation "com.readystatesoftware.systembartint:systembartint:${libs.systembartint}"
+
+
+    implementation "com.github.bumptech.glide:glide:${libs.glide}"
+    annotationProcessor "com.github.bumptech.glide:compiler:${libs.glide}"
 
     /**
      *  https://github.com/CymChad/BaseRecyclerViewAdapterHelper

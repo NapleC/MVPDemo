@@ -29,7 +29,7 @@ public final class Loger {
 
     public static final void debug(String msg) {
         if (IS_DEBUG) {
-            Log.i(getClassName()+"debug---", msg);
+            Log.i(getClassName()+":debug---", msg);
         }
     }
 
@@ -39,7 +39,7 @@ public final class Loger {
 
     public static final void debug(String msg, Throwable tr) {
         if (IS_DEBUG) {
-            Log.i(getClassName()+"debug---", msg, tr);
+            Log.i(getClassName()+":debug---", msg, tr);
         }
     }
 
@@ -51,7 +51,7 @@ public final class Loger {
 
     public static final void debugLog(String packName, String state) {
         if (DEBUG_LOG) {
-            Log.d(getClassName()+"debug---", packName + state);
+            Log.d(getClassName()+":debug---", packName + state);
         }
     }
 
