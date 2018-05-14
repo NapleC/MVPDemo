@@ -1,6 +1,7 @@
 # MVPDemo
-采用最新的 RxJava2.0 与 Retrifit2.0 来实现.
-基于RxJava2的RxBus.
+采用最新的 RxJava2.0 与 Retrifit2.0 来实现。
+基于RxJava2的RxBus。
+
 将所有依赖的版本控制提取到根目录下的config.gradle做统一管理
 
             supportVersion   : "27.1.1",
