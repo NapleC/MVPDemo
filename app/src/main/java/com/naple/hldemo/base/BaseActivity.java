@@ -62,7 +62,7 @@ public abstract class BaseActivity extends SupportActivity implements BaseView, 
             View rootView = getLayoutInflater().inflate(layoutId, rootLinearLayout, true);
             setContentView(rootView);
         }
-        stateBar();
+        stateBar(Color.parseColor("#ffffff"));
         initView();
         initData();
         setOnClick(R.id.tv_back_base_activity);
@@ -215,14 +215,14 @@ public abstract class BaseActivity extends SupportActivity implements BaseView, 
     /**
      * 设置状态栏背景颜色，不能改变状态栏内容的颜色
      */
-    private void stateBar() {
+    protected void stateBar(int color) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         }
         SystemBarTintManager tintManager = new SystemBarTintManager(this);
         tintManager.setStatusBarTintEnabled(true);
         tintManager.setNavigationBarTintEnabled(true);
-        tintManager.setTintColor(Color.parseColor("#000000"));
+        tintManager.setTintColor(color);
     }
 
     @Override

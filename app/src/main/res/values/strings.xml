@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">HLDemo</string>
+    <string name="title_activity_bottom_nav">BottomNavActivity</string>
+
+    <string name="title_home">首页</string>
+    <string name="title_mall">商城</string>
+    <string name="title_auction">拍卖</string>
+    <string name="title_news">消息</string>
+    <string name="title_person">我的</string>
 </resources>

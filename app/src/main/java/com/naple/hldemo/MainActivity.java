@@ -1,10 +1,12 @@
 package com.naple.hldemo;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
+import com.naple.hldemo.activities.BottomNavActivity;
 import com.naple.hldemo.adpater.NormalRecyclerViewAdapter;
 import com.naple.hldemo.base.BaseActivity;
 import com.naple.hldemo.mvp.api.BookApi;
@@ -71,7 +73,7 @@ public class MainActivity extends BaseActivity implements IBookView{
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.fl_toolbar_more:
-                ToastUtils.showShort("点击了更多");
+                startActivity(new Intent(MainActivity.this, BottomNavActivity.class));
                 break;
             case R.id.tv_title_base_activity:
                 ToastUtils.showShort("点击了主页");
